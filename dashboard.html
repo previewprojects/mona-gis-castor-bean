@@ -87,15 +87,14 @@ div.active.item  {
                       <div class="ui clearing divider"></div>
                 </div>
                 <div class="pusher" style=" max-width: 81%;">
-                  <div class="ui segment">
-                      <div class="ui secondary menu">
-                        <img class="ui tiny  image" src="logo1.jpg"  >
-                        <div class="right menu">
-                            <img class="ui tiny circular image" src="JBU_LOGO_FINAL.jpeg" >
-                        </div>
-                      </div>
-                  </div>
                   <div class="ui basic segment">
+                      <div class="ui grid" style="max-width:100%; padding:10px; align-content: center; position: relative;"> 
+                          <div class="two column row">
+                                  <div class="column"><img class="ui tiny circular image" src="logo1.jpg"  ></div>
+                                  <div class="column" style="margin-right: 0px;"><img class="ui tiny circular image" src="JBU_LOGO_FINAL.jpeg" style="position: absolute; right:0px;" ></div>
+                          </div>
+                      </div> 
+                      <div class="ui clearing divider"></div> 
                     <div class="ui secondary pointing menu">
                       <a class="item">
                         List of Farmers
@@ -141,22 +140,114 @@ div.active.item  {
                                   <!-- One "tab" for each step in the form: -->
                                   <div class="tab">
                                       <div class="field">
-                                          <label>First Name</label>
-                                          <input type="text" name="first-name" placeholder="First Name" oninput="this.className = ''">
-                                      </div>
+                                          <div class="two fields">
+                                            <div class="field">
+                                                <label>First Name</label>
+                                              <input type="text" name="farmer-first-name" placeholder="First Name" oninput="this.className = ''">
+                                            </div>
+                                            <div class="field">
+                                                <label>Last Name</label>
+                                              <input type="text" name="farmer-last-name" placeholder="Last Name" oninput="this.className = ''">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="field">
+                                            <div class="two fields">
+                                                <div class="field">
+                                                        <label>Farmer ID/RADA ID</label>
+                                                        <input type="text" name="farmer-registration-number" placeholder="ID">
+                                                </div>
+                                                <div class="field">
+                                                    <label>Gender</label>
+                                                    <select class="ui fluid dropdown">
+                                                      <option value="">Gender</option>
+                                                  <option value="Male">Male</option>
+                                                  <option value="Female">Female</option>
+                                                    </select>
+                                                </div>
+                                              </div>
+                                          </div>
+                                          <div class="field">
+                                              <div class="two fields">
+                                                  <div class="field">
+                                                      <label>Date of Birth</label>
+                                                      <input type="date" name="date-of-birth"  oninput="this.className = ''">
+                                                  </div>
+                                                  <div class="field">
+                                                      <label>Age Group</label>
+                                                      <select class="ui fluid dropdown">
+                                                        <option value="">Age Group</option>
+                                                    <option value="5-10">5-10</option>
+                                                    <option value="11-25">11-25</option>
+                                                    <option value="26-35">26-35</option>
+                                                    <option value="36-50">36-50</option>
+                                                    <option value="51-70">51-70</option>
+                                                    <option value="70-75">70-75</option>
+                                                    <option value="76 and over">76 and over</option>
+                                                  </select>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                  </div>
+                                  <div class="tab">
                                       <div class="field">
-                                          <label>Last Name</label>
-                                          <input type="text" name="first-name" placeholder="Last Name" oninput="this.className = ''" >
+                                          <label>Contact</label>
+                                          <div class="two fields">
+                                            <div class="field">
+                                              <input type="tel" name="owner-first-name" placeholder="Contact #1" oninput="this.className = ''">
+                                            </div>
+                                            <div class="field">
+                                              <input type="tel" name="owner-last-name" placeholder="Contact #2" oninput="this.className = ''">
+                                            </div>
+                                          </div>
+                                          <div class="two fields">
+                                            <div class="field">
+                                              <input type="tel" name="owner-first-name" placeholder="Fax #:" oninput="this.className = ''">
+                                            </div>
+                                            <div class="field">
+                                              <input type="email" name="owner-last-name" placeholder="Email" oninput="this.className = ''">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="field">
+                                            <label>Home Address</label>
+                                            <textarea rows="2" oninput="this.className = ''"></textarea>
+                                        </div>
+                                  </div>
+                                  <div class="tab">
+                                      <div class="ui form">
+                                          <div class="field">
+                                              <div class="three fields">
+                                                  <div class="field">
+                                                      <label>Farm</label>
+                                                      <input type="text" name="Farm Name" placeholder="Farm Name" oninput="this.className = ''">
+                                                    </div>
+                                                  <div class="field">
+                                                      <label>Farm ID</label>
+                                                      <input type="text" name="Farm ID" placeholder="Farm ID" oninput="this.className = ''">
+                                                  </div>
+                                                  <div class="field">
+                                                          <label>Address</label>
+                                                          <input placeholder="Farm Address" type="text" disabled="" tabindex="-1">
+                                                  </div>
+                                              </div>
+                                                  <button class="ui brown button">
+                                                      <i class="cloud upload icon"></i>
+                                                      Add Farm to Farmer.
+                                                  </button>
+                                          </div>
                                       </div>
-                                  </div>
-                                  <div class="tab">
-                                    <p><input placeholder="E-mail..." oninput="this.className = ''" ></p>
-                                    <p><input placeholder="Phone..." oninput="this.className = ''" ></p>
-                                  </div>
-                                  <div class="tab">
-                                    <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
-                                    <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
-                                    <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
+                                      <div style="padding-top:10px;">
+                                          <table class="ui single line table">
+                                                  <thead>
+                                                    <tr>
+                                                      <th>Farm Name</th>
+                                                      <th>Farm ID</th>
+                                                      <th>Farm Address</th>
+                                                    </tr>
+                                                  </thead>
+                                          </table>
+                                        </div>
                                   </div>
                                   <div style="padding: 5px;">
                                       <button type="button" class="ui brown button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
@@ -179,7 +270,7 @@ div.active.item  {
                                         document.getElementById("prevBtn").style.display = "inline";
                                       }
                                       if (n == (x.length - 1)) {
-                                        document.getElementById("nextBtn").innerHTML = "Submit";
+                                        document.getElementById("nextBtn").innerHTML = "Create Farmer";
                                         document.getElementById("nextBtn").className = "ui primary button";
 
                                       } else {
