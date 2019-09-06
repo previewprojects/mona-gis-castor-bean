@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Castor Bean Project</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<style>
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+.ui .list .item div:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+div.active.item  {
+  border-left: 5px solid rgb(255, 203, 203);
+}
+
+</style>
+</head>
+
+<body>
+  <div class="ui bottom attached segment pushable" >
+                <div class="ui visible inverted left vertical sidebar menu" style="min-height: 100% !important; background-color: brown !important;">
+                      <a class="item">
+                        <h4 style="letter-spacing: 2px;">Jamaica Castor Growers</h4>
+                      </a>
+                      
+                      <div class="ui list" >
+                        <div class="item">
+                          <div class="content" style="padding-top: 10px; padding-left: 10px; padding-bottom: 10px;">
+                            <a class="header" href="dashboard.html" style="color: white !important;" >
+                                <i class="user icon"></i>
+                              Farmer Demographic
+                            </a>
+                          </div>
+                        </div>
+                        <div class="item active">
+                          <div class="content"style="padding-top: 10px; padding-left: 10px; padding-bottom: 10px;">
+                            <a class="header" style="color: white !important;">
+                                <i class="leaf icon"></i>
+                              Field Record Form.
+                            </a>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <div class="content"style="padding-top: 10px; padding-left: 10px; padding-bottom: 10px;">
+                            <a class="header" href="harvestRecord.html" style="color: white !important;">
+                                <i class="lemon icon"></i>
+                                Harvest Record Form.
+                            </a>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <div class="content"style="padding-top: 10px; padding-left: 10px; padding-bottom: 10px; ">
+                            <a class="header" style="color: white !important;">
+                              <i class="clipboard list icon"></i>
+                              Reports.
+                            </a>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <div class="content"style="padding-top: 10px; padding-left: 10px; padding-bottom: 10px; ">
+                            <a class="header" style="color: white !important;">
+                              <i class="map icon"></i>
+                              Maps.
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ui clearing divider"></div>
+                </div>
+                <div class="pusher" style=" max-width: 81%;">
+                  <div class="ui segment">
+                      <div class="ui secondary menu">
+                        <img class="ui tiny  image" src="logo1.jpg"  >
+                        <div class="right menu">
+                            <img class="ui tiny circular image" src="JBU_LOGO_FINAL.jpeg" >
+                        </div>
+                      </div>
+                  </div>
+                  <div class="ui basic segment">
+                    <div class="ui secondary pointing menu">
+                      <a class="item">
+                        List of Records
+                      </a>
+                      <a class="active item">
+                        Add Record
+                      </a>
+                    </div>
+                  <!-- </div>-->
+                    <div style="max-width: 80%; justify-content:center;"> 
+                      <h3 class="ui header">
+                        Field/Plot Record Form
+                      </h3>
+                      <p></p>
+                      <p></p>
+                      <p></p>
+                      <p></p>
+                      <div class="ui four top attached steps" style="margin-left:10px; ">
+                              <div class="step">
+                                <i class="user icon"></i>
+                                <div class="content">
+                                  <div class="title">Personal</div>
+                                  <div class="description">Fill out farmer details here</div>
+                                </div>
+                              </div>
+                              <div class="step">
+                                <i class="leaf icon"></i>
+                                <div class="content">
+                                  <div class="title">Crop</div>
+                                  <div class="description">Enter Information on Crop to be used</div>
+                                </div>
+                              </div>
+                              <div class="step">
+                                    <i class="sun icon"></i>
+                                    <div class="content">
+                                      <div class="title">Soil Preperation</div>
+                                      <div class="description">Comment on the soil preperation status</div>
+                                    </div>
+                                  </div>
+                              <div class="step">
+                                <i class="industry icon"></i>
+                                <div class="content">
+                                  <div class="title">Sowing</div>
+                                  <div class="description">Enter details on sowing procedure.</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div >
+                                <form class="ui form" id="regForm" action=" " style="padding: 40px;">
+                                  <!-- One "tab" for each step in the form: -->
+                                  <div class="tab">
+                                        <div class="field">
+                                                <label>Owner's Name</label>
+                                                <div class="two fields">
+                                                  <div class="field">
+                                                    <input type="text" name="owner-first-name" placeholder="Owner's First Name" oninput="this.className = ''">
+                                                  </div>
+                                                  <div class="field">
+                                                    <input type="text" name="owner-last-name" placeholder="Owner's Last Name" oninput="this.className = ''">
+                                                  </div>
+                                                </div>
+                                        </div>
+                                        <div class="field">
+                                                <label>Farmer Registration Number</label>
+                                                <input type="text" name="farmer-registration-number" placeholder="Registration Number">
+                                        </div>
+                                        <div class="field">
+                                            <label>Address</label>
+                                            <textarea rows="2" oninput="this.className = ''"></textarea>
+                                        </div>
+                                        <div class="field">
+                                                <label>Contact</label>
+                                                <div class="two fields">
+                                                  <div class="field">
+                                                    <input type="tel" name="owner-first-name" placeholder="Contact #1" oninput="this.className = ''">
+                                                  </div>
+                                                  <div class="field">
+                                                    <input type="tel" name="owner-last-name" placeholder="Contact #2" oninput="this.className = ''">
+                                                  </div>
+                                                </div>
+                                                <div class="two fields">
+                                                  <div class="field">
+                                                    <input type="tel" name="owner-first-name" placeholder="Fax #:" oninput="this.className = ''">
+                                                  </div>
+                                                  <div class="field">
+                                                    <input type="email" name="owner-last-name" placeholder="Email" oninput="this.className = ''">
+                                                  </div>
+                                                </div>
+                                        </div>
+                                  </div>
+                                  <div class="tab">
+                                        <div class="field">
+                                                <div class="two fields">
+                                                  <div class="field">
+                                                    <label>Field/Plot/Site Name</label>
+                                                    <input type="text" name="field-name"  oninput="this.className = ''">
+                                                  </div>
+                                                  <div class="field">
+                                                        <label>Area (Hectares)</label>
+                                                    <input type="number" name="area"  oninput="this.className = ''">
+                                                  </div>
+                                                </div>
+                                        </div>
+                                        <div class="field">
+                                                <label>Preceding Crop</label>
+                                                <input type="text" name="preceding-crop" placeholder="Preceding Crop">
+                                        </div>
+                                        <h4 class="ui dividing header">Crop</h4>
+                                        <div class="field">
+                                                <label>Type of Crop</label>
+                                                <input type="text" name="type-of-crop" placeholder="Type of Crop">
+                                        </div>
+                                        <div class="field">
+                                                <label>Variety</label>
+                                                <input type="text" name="crop-variety" placeholder="Variety of Crop">
+                                        </div>
+                                  </div>
+                                  <div class="tab">
+                                    <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
+                                    <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
+                                    <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
+                                  </div>
+                                  <div class="tab">
+                                        <div class="field">
+                                                <div class="three fields">
+                                                    <div class="field">
+                                                        <label>Date Of Planting</label>
+                                                        <input type="date" name="date-of-planting"  oninput="this.className = ''">
+                                                    </div>
+                                                    <div class="field">
+                                                            <label>Nursery</label>
+                                                        <input type="text" name="nursery"  oninput="this.className = ''">
+                                                    </div>
+                                                    <div class="field">
+                                                            <label>Field</label>
+                                                        <input type="text" name="field"  oninput="this.className = ''">
+                                                    </div>
+                                                </div>                                             
+                                                <div class="two fields">
+                                                  <div class="field">
+                                                    <label>Supplier (seeds)</label>
+                                                    <input type="text" name="supplier-of-seeds" oninput="this.className = ''">
+                                                  </div>
+                                                  <div class="field">
+                                                        <label>Batch Number</label>
+                                                    <input type="text" name="batch-number" oninput="this.className = ''">
+                                                  </div>
+                                                </div>
+                                                <div class="two fields">
+                                                        <div class="field">
+                                                          <label>Production Date</label>
+                                                          <input type="date" name="production-date" oninput="this.className = ''">
+                                                        </div>
+                                                        <div class="field">
+                                                              <label>Expiry Date</label>
+                                                          <input type="date" name="expiry-date" oninput="this.className = ''">
+                                                        </div>
+                                                </div>
+                                                <div class="two fields">
+                                                        <div class="field">
+                                                          <label>Quantity Sown</label>
+                                                          <input type="number" name="quantity-sown" oninput="this.className = ''">
+                                                        </div>
+                                                        <div class="field">
+                                                              <label>Sowing Density</label>
+                                                          <input type="text" name="sowing-density" oninput="this.className = ''">
+                                                        </div>
+                                                </div>
+                                                <div class="two fields">
+                                                        <div class="field">
+                                                          <label>Seed Treatment</label>
+                                                          <textarea rows="2" oninput="this.className = ''"></textarea>
+                                                        </div>
+                                                        <div class="field">
+                                                            <label>Remarks</label>
+                                                            <textarea rows="2" oninput="this.className = ''"></textarea>
+                                                        </div>
+                                                </div>
+                                        </div>                          
+                                  </div>
+                                  <div style="padding: 5px;">
+                                      <button type="button" class="ui brown button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                                      <button type="button" class="ui brown button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                  
+                                  </div>
+                                </form>
+                                <script>
+                                    var currentTab = 0; // Current tab is set to be the first tab (0)
+                                    showTab(currentTab); // Display the current tab
+                                    
+                                    function showTab(n) {
+                                      // This function will display the specified tab of the form...
+                                      var x = document.getElementsByClassName("tab");
+                                      x[n].style.display = "block";
+                                      //... and fix the Previous/Next buttons:
+                                      if (n == 0) {
+                                        document.getElementById("prevBtn").style.display = "none";
+                                      } else {
+                                        document.getElementById("prevBtn").style.display = "inline";
+                                      }
+                                      if (n == (x.length - 1)) {
+                                        document.getElementById("nextBtn").innerHTML = "Submit";
+                                        document.getElementById("nextBtn").className = "ui primary button";
+
+                                      } else {
+                                        document.getElementById("nextBtn").innerHTML = "Next";
+                                        document.getElementById("nextBtn").className = "ui brown button";
+                                      }
+                                      //... and run a function that will display the correct step indicator:
+                                      fixStepIndicator(n)
+                                    }
+                                    
+                                    function nextPrev(n) {
+                                      // This function will figure out which tab to display
+                                      var x = document.getElementsByClassName("tab");
+                                      // Exit the function if any field in the current tab is invalid:
+                                      //if (n == 1 && !validateForm()) return false;
+                                      // Hide the current tab:
+                                      x[currentTab].style.display = "none";
+                                      // Increase or decrease the current tab by 1:
+                                      currentTab = currentTab + n;
+                                      // if you have reached the end of the form...
+                                      if (currentTab >= x.length) {
+                                        // ... the form gets submitted:
+                                        document.getElementById("regForm").submit();
+                                        return false;
+                                      }
+                                      // Otherwise, display the correct tab:
+                                      showTab(currentTab);
+                                    }
+                                    
+                                    
+                                    
+                                    function fixStepIndicator(n) {
+                                      // This function removes the "active" class of all steps...
+                                      var i, x = document.getElementsByClassName("step");
+                                      for (i = 0; i < x.length; i++) {
+                                        x[i].className = x[i].className.replace(" active", "");
+                                      }
+                                      //... and adds the "active" class on the current step:
+                                      x[n].className += " active";
+                                    }
+                                    </script>
+
+                              </p>
+                            </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+</body>
+
+
+</html>
