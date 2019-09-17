@@ -59,17 +59,17 @@ div.active.item  {
                             </a>
                           </div>
                         </div>
-                        <div class="item active">
+                        <div class="item">
                           <div class="content"style="padding-top: 10px; padding-left: 10px; padding-bottom: 10px;">
-                            <a class="header" style="color: white !important;">
+                            <a class="header" href="harvestRecord.html" style="color: white !important;">
                                 <i class="lemon icon"></i>
                                 Harvest Record Form.
                             </a>
                           </div>
                         </div>
-                        <div class="item">
+                        <div class="item active">
                           <div class="content"style="padding-top: 10px; padding-left: 10px; padding-bottom: 10px; ">
-                            <a class="header" href="reports.html" style="color: white !important;">
+                            <a class="header" style="color: white !important;">
                               <i class="clipboard list icon"></i>
                               Reports.
                             </a>
@@ -96,9 +96,15 @@ div.active.item  {
                       </div> 
                       <div class="ui clearing divider"></div>
                     <div class="ui secondary pointing menu">
-                      <a class="active item">
-                        Harvest Record Form
+                      <a class="item" href="reports.html">
+                        Farm Performance Report
                       </a>
+                      <a class="item" href="reports2.html">
+                            Farm Follow Up Plan
+                       </a>
+                       <a class="active item">
+                            Farm Follow Up Report
+                        </a>
                       <!-- <a class="item">
                         Add Farmer
                       </a> -->
@@ -106,7 +112,7 @@ div.active.item  {
                   <!-- </div>-->
                     <div style="max-width: 70%; justify-content:center;"> 
                       <h3 class="ui header">
-                        Harvest Record Form
+                        Reports
                       </h3>
                       <p></p>
                       <p></p>
@@ -115,7 +121,7 @@ div.active.item  {
                       <div style="margin-left:10px; ">
                             <div class="ui form">
                                     <div class="field">
-                                        <div class="three fields">
+                                        <div class="four fields">
                                             <div class="field">
                                                 <label>Farmer</label>
                                                 <div class="ui selection dropdown">
@@ -142,14 +148,20 @@ div.active.item  {
                                             </div>
                                             <div class="field">
                                                 <div class="disabled field">
-                                                    <label>Address</label>
+                                                    <label>Farm Address</label>
                                                     <input placeholder="Read Only" type="text" disabled="" tabindex="-1">
                                                 </div>
                                             </div>
+                                            <div class="field">
+                                                    <div class="disabled field">
+                                                        <label>Farm Acerage</label>
+                                                        <input placeholder="Farm Acerage" type="text" disabled="" tabindex="-1">
+                                                    </div>
+                                                </div>
                                         </div>
                                             <button class="ui brown button">
                                                 <i class="cloud upload icon"></i>
-                                                Add Harvest Record
+                                                Add Field Performance Record
                                             </button>
                                         
                                     </div>
@@ -158,13 +170,16 @@ div.active.item  {
                                     <table class="ui single line table">
                                             <thead>
                                               <tr>
-                                                <th>Harvest Date</th>
-                                                <th>Site</th>
-                                                <th>Plot</th>
-                                                <th>Harvest Unit</th>
-                                                <th>Quantity</th>
-                                                <th>Approximate Weight</th>
-                                                <th>Observation</th>
+                                                <th>Month</th>
+                                                <th>Planting</th>
+                                                <th>Plant <br> Height</th>
+                                                <th>Weed <br /> Control</th>
+                                                <th>Insect <br /> Manifestation</th>
+                                                <th>Mould <br /> Manifestation</th>
+                                                <th>Flowering</th>
+                                                <th>Panicle <br /> First Appearance</th>
+                                                <th>Mature <br /> Panicle Size</th>
+                                                <th>Harvest Readiness</th>
                                               </tr>
                                             </thead>
                                             <tbody>
@@ -177,33 +192,6 @@ div.active.item  {
                                                 <td>No</td>
                                                 <td>No</td>
                                               </tr>
-                                              <tr>
-                                                <td>Jamie Harington</td>
-                                                <td>January 11, 2014</td>
-                                                <td>jamieharingonton@yahoo.com</td>
-                                                <td>Yes</td>
-                                                <td>No</td>
-                                                <td>No</td>
-                                                <td>No</td>
-                                              </tr>
-                                              <tr>
-                                                <td>Jill Lewis</td>
-                                                <td>May 11, 2014</td>
-                                                <td>jilsewris22@yahoo.com</td>
-                                                <td>Yes</td>
-                                                <td>No</td>
-                                                <td>No</td>
-                                                <td>No</td>
-                                              </tr>
-                                              <tr>
-                                                <td>Jill Lewis</td>
-                                                <td>May 11, 2014</td>
-                                                <td>jilsewris22@yahoo.com</td>
-                                                <td>Yes</td>
-                                                <td>No</td>
-                                                <td>No</td>
-                                                <td>No</td>
-                                             </tr>
                                             </tbody>
                                           </table>
                             </div>
