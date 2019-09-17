@@ -104,7 +104,7 @@ div.active.item  {
                       </a>
                     </div>
                   <!-- </div>-->
-                    <div style="max-width: 70%; justify-content:center;"> 
+                    <div style="max-width: 80%; justify-content:center;"> 
                       <h3 class="ui header">
                         Farmer Demographic
                       </h3>
@@ -112,7 +112,7 @@ div.active.item  {
                       <p></p>
                       <p></p>
                       <p></p>
-                      <div class="ui three top attached steps" style="margin-left:10px; ">
+                      <div class="ui four top attached steps" style="margin-left:10px; ">
                               <div class="step">
                                 <i class="user icon"></i>
                                 <div class="content">
@@ -125,6 +125,13 @@ div.active.item  {
                                 <div class="content">
                                   <div class="title">Contact</div>
                                   <div class="description">Enter Farmer Contact Information and Home Address</div>
+                                </div>
+                              </div>
+                              <div class="step">
+                                <i class="dollar sign icon"></i>
+                                <div class="content">
+                                  <div class="title">Financials</div>
+                                  <div class="description">Enter Farmer Revenue and Farm Employment Data.</div>
                                 </div>
                               </div>
                               <div class="step">
@@ -213,6 +220,43 @@ div.active.item  {
                                             <label>Home Address</label>
                                             <textarea rows="2" oninput="this.className = ''"></textarea>
                                         </div>
+                                  </div>
+                                  <div class="tab">
+                                    <div class="field">
+                                        <label>Farm Revenue</label>
+                                        <div class="three fields">
+                                              <div class="field">
+                                                <input type="tel" name="owner-first-name" placeholder="Total Household Income" oninput="this.className = ''">
+                                              </div>
+                                              <div class="field">
+                                                <input type="tel" name="owner-last-name" placeholder="Total Farm Production (lbs)" oninput="this.className = ''">
+                                              </div>
+                                              <div class="field">
+                                                <input type="tel" name="owner-last-name" placeholder="Value of Farm Production sales(jmd)" oninput="this.className = ''">
+                                              </div>
+                                        </div>
+                                        <label>Farm Employment Data</label>
+                                        <div class="three fields">
+                                              <div class="field">
+                                                  <label>Paid Workers</label>
+                                                  <input type="number" name="owner-last-name" placeholder="Male" oninput="this.className = ''">
+                                                  <div style="min-height: 2px;"></div>
+                                                  <input type="number" name="owner-last-name" placeholder="Female" oninput="this.className = ''">
+                                              </div>
+                                              <div class="field">
+                                                  <label>Volunteer Workers</label>
+                                                  <input type="number" name="owner-last-name" placeholder="Male" oninput="this.className = ''">
+                                                  <div style="min-height: 2px;"></div>
+                                                  <input type="number" name="owner-last-name" placeholder="Female" oninput="this.className = ''">
+                                              </div>
+                                              <div class="field">
+                                                  <label>Total # of Workers</label>
+                                                  <input type="number" name="owner-last-name" placeholder="Male" oninput="this.className = ''">
+                                                  <div style="min-height: 2px;"></div>
+                                                  <input type="number" name="owner-last-name" placeholder="Female" oninput="this.className = ''">
+                                              </div>
+                                        </div>
+                                    </div>
                                   </div>
                                   <div class="tab">
                                       <div class="ui form">
