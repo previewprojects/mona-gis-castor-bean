@@ -120,79 +120,27 @@ div.active.item  {
                       <p></p>
                       <div style="margin-left:10px; ">
                             <div class="ui form">
-                                    <div class="field">
-                                        <div class="four fields">
-                                            <div class="field">
-                                                <label>Farmer</label>
-                                                <div class="ui selection dropdown">
-                                                    <input type="hidden" name="Farmer">
-                                                    <i class="dropdown icon"></i>
-                                                    <div class="default text">Farmer</div>
-                                                    <div class="menu">
-                                                        <div class="item" data-value="1">Bill</div>
-                                                        <div class="item" data-value="0">John</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="field">
-                                                <label>Farm</label>
-                                                <div class="ui selection dropdown">
-                                                    <input type="hidden" name="Farm">
-                                                    <i class="dropdown icon"></i>
-                                                    <div class="default text">Farm</div>
-                                                    <div class="menu">
-                                                        <div class="item" data-value="1">Oracle</div>
-                                                        <div class="item" data-value="0">Bernard Fields</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="field">
-                                                <div class="disabled field">
-                                                    <label>Farm Address</label>
-                                                    <input placeholder="Read Only" type="text" disabled="" tabindex="-1">
-                                                </div>
-                                            </div>
-                                            <div class="field">
-                                                    <div class="disabled field">
-                                                        <label>Farm Acerage</label>
-                                                        <input placeholder="Farm Acerage" type="text" disabled="" tabindex="-1">
-                                                    </div>
-                                                </div>
-                                        </div>
-                                            <button class="ui brown button">
+                                            <button class="ui brown button" onclick="myFunction()">
                                                 <i class="cloud upload icon"></i>
                                                 Add Field Performance Record
                                             </button>
-                                        
-                                    </div>
                             </div>
                             <div style="padding-top:10px;">
                                     <table class="ui single line table">
                                             <thead>
                                               <tr>
-                                                <th>Month</th>
-                                                <th>Planting</th>
-                                                <th>Plant <br> Height</th>
-                                                <th>Weed <br /> Control</th>
-                                                <th>Insect <br /> Manifestation</th>
-                                                <th>Mould <br /> Manifestation</th>
-                                                <th>Flowering</th>
-                                                <th>Panicle <br /> First Appearance</th>
-                                                <th>Mature <br /> Panicle Size</th>
-                                                <th>Harvest Readiness</th>
+                                                <th>Name of Landowner</th>
+                                                <th>Contact Information Landowner/Leaseholder</th>
+                                                <th>Acerage</th>
+                                                <th>Location of Land</th>
+                                                <th>Month 1</th>
+                                                <th>Month 2</th>
+                                                <th>Month 3</th>
+                                                <th>Month 4</th>
+                                                <th>Month 5</th>
                                               </tr>
                                             </thead>
-                                            <tbody>
-                                              <tr>
-                                                <td>John Lilki</td>
-                                                <td>September 14, 2013</td>
-                                                <td>jhlilk22@yahoo.com</td>
-                                                <td>No</td>
-                                                <td>No</td>
-                                                <td>No</td>
-                                                <td>No</td>
-                                              </tr>
-                                            </tbody>
+                                            
                                           </table>
                             </div>
                       </div>
@@ -201,7 +149,71 @@ div.active.item  {
                   
                 </div>
               </div>
-</body>
 
+               <!-- Modal for Harvest Record. -->
+               <div class="ui modal">
+                <i class="close icon"></i>
+                <div class="header" style="background-color: brown; color:white;">
+                  Add to Farm Performance Report
+                </div>
+                <div class="content">
+                    <div class="ui form">
+                        <div class="field">
+                          <label>Month</label>
+                          <select class="ui fluid dropdown">
+                            <option value="">Month 1</option>
+                            <option value="">Month 2</option>
+                            <option value="">Month 3</option>
+                            <option value="">Month 4</option>
+                            <option value="">Month 5</option>
+                            <option value="">Month 6</option>
+                            <option value="">Month 7</option>
+                            <option value="">Month 8</option>
+                            <option value="">Month 9</option>
+                            <option value="">Month 10</option>
+                            <option value="">Month 11</option>
+                            <option value="">Month 12</option>
+                           </select>
+                          </div>
+                        <div class="three fields">
+                          <div class="field">
+                            <label>Name of Landowner/Leaseholder</label>
+                            <input placeholder="Name of Landowner" type="text"  tabindex="-1">
+                          </div>
+                          <div class="field">
+                            <label>Contact Information</label>
+                            <input placeholder="Contact Information" type="text"  tabindex="-1">
+                          </div>
+                          <div class="field">
+                            <label>Acerage</label>
+                            <input placeholder="Acerage" type="text"  tabindex="-1">
+                          </div>
+                        </div>
+                        <div class="two fields">
+                          <div class="field">
+                            <label>Location of Land</label>
+                            <input placeholder="Location of Land" type="text" tabindex="-1">
+                        </div>
+                        <div class="field">
+                            <label>Parish</label>
+                            <input placeholder="Parish" type="text"  tabindex="-1">
+                        </div>
+                </div>
+                <div class="actions">
+                  <div class="ui black deny button">
+                    Cancel
+                  </div>
+                  <div class="ui positive right labeled icon button">
+                    Submit
+                    <i class="checkmark icon"></i>
+                  </div>
+                </div>
+              </div>
+</body>
+<script>
+  function myFunction() {
+    $('.ui.modal').modal('show'); 
+          }
+</script>
 
 </html>

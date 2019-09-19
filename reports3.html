@@ -119,78 +119,62 @@ div.active.item  {
                       <p></p>
                       <p></p>
                       <div style="margin-left:10px; ">
-                            <div class="ui form">
-                                    <div class="field">
-                                        <div class="four fields">
-                                            <div class="field">
-                                                <label>Farmer</label>
-                                                <div class="ui selection dropdown">
-                                                    <input type="hidden" name="Farmer">
-                                                    <i class="dropdown icon"></i>
-                                                    <div class="default text">Farmer</div>
-                                                    <div class="menu">
-                                                        <div class="item" data-value="1">Bill</div>
-                                                        <div class="item" data-value="0">John</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="field">
-                                                <label>Farm</label>
-                                                <div class="ui selection dropdown">
-                                                    <input type="hidden" name="Farm">
-                                                    <i class="dropdown icon"></i>
-                                                    <div class="default text">Farm</div>
-                                                    <div class="menu">
-                                                        <div class="item" data-value="1">Oracle</div>
-                                                        <div class="item" data-value="0">Bernard Fields</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="field">
-                                                <div class="disabled field">
-                                                    <label>Farm Address</label>
-                                                    <input placeholder="Read Only" type="text" disabled="" tabindex="-1">
-                                                </div>
-                                            </div>
-                                            <div class="field">
-                                                    <div class="disabled field">
-                                                        <label>Farm Acerage</label>
-                                                        <input placeholder="Farm Acerage" type="text" disabled="" tabindex="-1">
-                                                    </div>
-                                                </div>
-                                        </div>
-                                            <button class="ui brown button">
-                                                <i class="cloud upload icon"></i>
-                                                Add Field Performance Record
-                                            </button>
-                                        
-                                    </div>
-                            </div>
                             <div style="padding-top:10px;">
+                              <div class="ui form">
+                                      <div class="field">
+                                        <label>Month</label>
+                                        <select class="ui fluid dropdown">
+                                          <option value="">January</option>
+                                          <option value="">February</option>
+                                          <option value="">March</option>
+                                          <option value="">April</option>
+                                          <option value="">May</option>
+                                          <option value="">June</option>
+                                          <option value="">July</option>
+                                          <option value="">August</option>
+                                          <option value="">September</option>
+                                          <option value="">October</option>
+                                          <option value="">November</option>
+                                          <option value="">December</option>
+                                         </select>
+                                        </div>
+                                      <div class="two fields">
+                                        <div class="field">
+                                          <label>Name</label>
+                                          <input placeholder="Name" type="text"  tabindex="-1">
+                                        </div>
+                                        <div class="field">
+                                          <label>Acerage</label>
+                                          <input placeholder="Acerage" type="text"  tabindex="-1">
+                                        </div>
+                                      </div>
+                                      <div class="field">
+                                          <label>Yield Projection 347lb/acre/Month<br /> Unshelled</label>
+                                          <input placeholder="" type="text"  tabindex="-1">
+                                      </div>
+                                  <button class="ui brown button" >
+                                    <i class="cloud upload icon"></i>
+                                    Add Field Performance Record
+                                  </button>
+                                </div>
                                     <table class="ui single line table">
                                             <thead>
                                               <tr>
-                                                <th>Month</th>
-                                                <th>Planting</th>
-                                                <th>Plant <br> Height</th>
-                                                <th>Weed <br /> Control</th>
-                                                <th>Insect <br /> Manifestation</th>
-                                                <th>Mould <br /> Manifestation</th>
-                                                <th>Flowering</th>
-                                                <th>Panicle <br /> First Appearance</th>
-                                                <th>Mature <br /> Panicle Size</th>
-                                                <th>Harvest Readiness</th>
+                                                <th>Name</th>
+                                                <th>Acerage</th>
+                                                <th>Yield Projection</th>
+                                                <th>January</th>
+                                                <th>February</th>
+                                                <th>March</th>
+                                                <th>April</th>
+                                                <th>May</th>
+                                                <th>June</th>
+                                                <th>July</th>
                                               </tr>
                                             </thead>
                                             <tbody>
                                               <tr>
-                                                <td>John Lilki</td>
-                                                <td>September 14, 2013</td>
-                                                <td>jhlilk22@yahoo.com</td>
-                                                <td>No</td>
-                                                <td>No</td>
-                                                <td>No</td>
-                                                <td>No</td>
+                                                
                                               </tr>
                                             </tbody>
                                           </table>
@@ -201,7 +185,9 @@ div.active.item  {
                   
                 </div>
               </div>
+               
 </body>
+
 
 
 </html>

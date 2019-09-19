@@ -159,8 +159,8 @@ div.active.item  {
                                                     </div>
                                                 </div>
                                         </div>
-                                            <button class="ui brown button">
-                                                <i class="cloud upload icon"></i>
+                                            <button class="ui brown button" onclick="myFunction()">
+                                                <i class="cloud upload icon" ></i>
                                                 Add Field Performance Record
                                             </button>
                                         
@@ -184,13 +184,25 @@ div.active.item  {
                                             </thead>
                                             <tbody>
                                               <tr>
-                                                <td>John Lilki</td>
-                                                <td>September 14, 2013</td>
-                                                <td>jhlilk22@yahoo.com</td>
-                                                <td>No</td>
-                                                <td>No</td>
-                                                <td>No</td>
-                                                <td>No</td>
+                                                <td>Month 1</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Month 2</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Month 3</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Month 4</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Month 5</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Month 6</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Month 7</td>
                                               </tr>
                                             </tbody>
                                           </table>
@@ -201,7 +213,118 @@ div.active.item  {
                   
                 </div>
               </div>
+              <!-- Modal for Harvest Record. -->
+              <div class="ui modal">
+                <i class="close icon"></i>
+                <div class="header" style="background-color: brown; color:white;">
+                  Add to Farm Performance Report
+                </div>
+                <div class="content">
+                    <div class="ui form">
+                        <div class="disabled field">
+                            <div class="three fields">
+                                <div class="field">
+                                    <label>Farmer</label>
+                                    <div class="ui selection dropdown">
+                                        <input type="hidden" name="Farmer">
+                                        <i class="dropdown icon"></i>
+                                        <div class="default text">Farmer</div>
+                                        <div class="menu">
+                                            <div class="item" data-value="1">Bill</div>
+                                            <div class="item" data-value="0">John</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="disabled field">
+                                    <label>Farm Acerage</label>
+                                    <input placeholder="Farm Acerage" type="text" disabled="" tabindex="-1">
+                                </div>
+                                <div class="field">
+                                    <div class="disabled field">
+                                        <label>Farm Address</label>
+                                        <input placeholder="Farm Address" type="text" disabled="" tabindex="-1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                          <label>Month</label>
+                          <select class="ui fluid dropdown">
+                            <option value="">Month 1</option>
+                            <option value="">Month 2</option>
+                            <option value="">Month 3</option>
+                            <option value="">Month 4</option>
+                            <option value="">Month 5</option>
+                            <option value="">Month 6</option>
+                            <option value="">Month 7</option>
+                            <option value="">Month 8</option>
+                            <option value="">Month 9</option>
+                            <option value="">Month 10</option>
+                            <option value="">Month 11</option>
+                            <option value="">Month 12</option>
+                           </select>
+                          </div>
+                        <div class="three fields">
+                          <div class="field">
+                            <label>Planting</label>
+                            <input placeholder="Planting" type="text"  tabindex="-1">
+                          </div>
+                          <div class="field">
+                            <label>Plant Height</label>
+                            <input placeholder="Plant Height" type="text"  tabindex="-1">
+                          </div>
+                          <div class="field">
+                            <label>Weed Control</label>
+                            <input placeholder="Weed Control" type="text"  tabindex="-1">
+                          </div>
+                        </div>
+                        <div class="three fields">
+                          <div class="field">
+                            <label>Insect Manifestation</label>
+                            <input placeholder="Insect Manifestation" type="text"  tabindex="-1">
+                          </div>
+                          <div class="field">
+                            <label>Mould Manifestation</label>
+                            <input placeholder="Mould Manifestation" type="text"  tabindex="-1">
+                          </div>
+                          <div class="field">
+                            <label>Flowering</label>
+                            <input placeholder="Flowering" type="text"  tabindex="-1">
+                          </div> 
+                        </div>
+                        <div class="three fields">
+                          <div class="field">
+                            <label>Panicle First Appearance</label>
+                            <input placeholder="Panicle First Appearance" type="text"  tabindex="-1">
+                          </div>
+                          <div class="field">
+                            <label>Mature Panicle Size</label>
+                            <input placeholder="Mature Panicle Size" type="text"  tabindex="-1">
+                          </div>
+                          <div class="field">
+                            <label>Harvest Readiness</label>
+                            <input placeholder="Harvest Readiness" type="text"  tabindex="-1">
+                          </div> 
+                        </div>    
+                    </div>
+                </div>
+                <div class="actions">
+                  <div class="ui black deny button">
+                    Cancel
+                  </div>
+                  <div class="ui positive right labeled icon button">
+                    Submit
+                    <i class="checkmark icon"></i>
+                  </div>
+                </div>
+              </div>
 </body>
+
+<script>
+  function myFunction() {
+    $('.ui.modal').modal('show'); 
+          }
+</script>
 
 
 </html>
