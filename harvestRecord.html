@@ -88,13 +88,13 @@ div.active.item  {
                 </div>
                 <div class="pusher" style=" max-width: 81%;">
                   <div class="ui basic segment">
-                      <div class="ui grid" style="max-width:100%; padding:10px; align-content: center; position: relative;"> 
+                      <!-- <div class="ui grid" style="max-width:100%; padding:10px; align-content: center; position: relative;"> 
                           <div class="two column row">
                                   <div class="column"><img class="ui tiny circular image" src="logo1.jpg"  ></div>
                                   <div class="column" style="margin-right: 0px;"><img class="ui tiny circular image" src="JBU_LOGO_FINAL.jpeg" style="position: absolute; right:0px;" ></div>
                           </div>
                       </div> 
-                      <div class="ui clearing divider"></div>
+                      <div class="ui clearing divider"></div> -->
                     <div class="ui secondary pointing menu">
                       <a class="active item">
                         Harvest Record Form
@@ -147,7 +147,7 @@ div.active.item  {
                                                 </div>
                                             </div>
                                         </div>
-                                            <button class="ui brown button">
+                                            <button class="ui brown button" onclick="myFunction()">
                                                 <i class="cloud upload icon"></i>
                                                 Add Harvest Record
                                             </button>
@@ -213,6 +213,109 @@ div.active.item  {
                   
                 </div>
               </div>
+              
+              <!-- Modal for Harvest Record. -->
+              <div class="ui modal">
+                  <i class="close icon"></i>
+                  <div class="header">
+                    Add Harvest Record
+                  </div>
+                  <div class="content">
+                      <div class="ui form">
+                          <div class="disabled field">
+                              <div class="three fields">
+                                  <div class="field">
+                                      <label>Farmer</label>
+                                      <div class="ui selection dropdown">
+                                          <input type="hidden" name="Farmer">
+                                          <i class="dropdown icon"></i>
+                                          <div class="default text">Farmer</div>
+                                          <div class="menu">
+                                              <div class="item" data-value="1">Bill</div>
+                                              <div class="item" data-value="0">John</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="disabled field">
+                                      <label>Farm</label>
+                                      <div class="ui selection dropdown">
+                                          <input type="hidden" name="Farm">
+                                          <i class="dropdown icon"></i>
+                                          <div class="default text">Farm</div>
+                                          <div class="menu">
+                                              <div class="item" data-value="1">Oracle</div>
+                                              <div class="item" data-value="0">Bernard Fields</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="field">
+                                      <div class="disabled field">
+                                          <label>Address</label>
+                                          <input placeholder="Read Only" type="text" disabled="" tabindex="-1">
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="three fields">
+                              <div class="field">
+                                  <label>Harvest Date</label>
+                                  <input type="date" name="date-of-planting"  oninput="this.className = ''">
+                              </div>
+                              <div class="field">
+                                  <label>Site</label>
+                                  <select class="ui fluid dropdown">
+                                    <option value="">Implementation Comments</option>
+                                    <option value="5-10">Good</option>
+                                    <option value="11-25">Fair</option>
+                                    <option value="26-35">Poor</option>
+                                   </select>
+                              </div>
+                              <div class="field">
+                                  <label>Plot</label>
+                                  <select class="ui fluid dropdown">
+                                    <option value="">Implementation Comments</option>
+                                    <option value="5-10">Good</option>
+                                    <option value="11-25">Fair</option>
+                                    <option value="26-35">Poor</option>
+                                   </select>
+                              </div>
+                            </div>
+                            <div class="three fields">
+                                <div class="field">
+                                        <label>Harvest Unit</label>
+                                        <input placeholder="Harvest Unit" type="text"  tabindex="-1">
+                                </div>
+                                <div class="field">
+                                    <label>Quantity</label>
+                                    <input placeholder="Quantity" type="text"  tabindex="-1">
+                                 </div>
+                                 <div class="field">
+                                    <label>Approximate Weight</label>
+                                    <input placeholder="Approximate Weight" type="text"  tabindex="-1">
+                                  </div>
+                              </div>
+                              <div class="field">
+                                  <label>Observation</label>
+                                  <textarea rows="2" oninput="this.className = ''"></textarea>
+                              </div>
+                      </div>
+                  </div>
+                  <div class="actions">
+                    <div class="ui black deny button">
+                      Cancel
+                    </div>
+                    <div class="ui positive right labeled icon button">
+                      Submit
+                      <i class="checkmark icon"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <script>
+                  function myFunction() {
+                    $('.ui.modal').modal('show'); 
+                          }
+                </script>
 </body>
 
 
