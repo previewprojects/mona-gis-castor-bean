@@ -15,7 +15,7 @@
 <style>
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
-  background-color: #ffdddd;
+  border-color: red !important;
 }
 
 /* Hide all steps by default: */
@@ -32,6 +32,38 @@ div.active.item  {
   border-left: 5px solid rgb(255, 203, 203);
 }
 
+@media screen and (max-width: 768px) {
+  .sidebar{
+    display: none !important;
+  }
+  .not-pushed{
+    max-width: 100% !important;
+  }
+
+  .ui.four.top.attached.steps{
+    display: none !important;
+  }
+
+  .step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: brown;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}
+}
 </style>
 </head>
 

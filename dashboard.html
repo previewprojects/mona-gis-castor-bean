@@ -15,7 +15,7 @@
 <style>
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
-  background-color: #ffdddd;
+  border-color: red !important;
 }
 
 /* Hide all steps by default: */
@@ -32,11 +32,46 @@ div.active.item  {
   border-left: 5px solid rgb(255, 203, 203);
 }
 
+
+
+@media screen and (max-width: 768px) {
+  .sidebar{
+    display: none !important;
+  }
+  .not-pushed{
+    max-width: 100% !important;
+  }
+
+  .ui.four.top.attached.steps{
+    display: none !important;
+  }
+
+  .step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: brown;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}
+}
+
 </style>
 </head>
 
 <body>
-  <div class="ui bottom attached segment pushable" >
+  <div id="main" class="ui bottom attached segment pushable" >
                 <div class="ui visible inverted left vertical sidebar menu" style="background-color: brown !important;">
                       <a class="item">
                         <h4 style="letter-spacing: 2px;">Jamaica Castor Growers</h4>
@@ -95,7 +130,7 @@ div.active.item  {
                       <div class="ui clearing divider"></div>
                 </div>
                 <div class="pusher" style=" max-width: 81%;">
-                  <div class="ui basic segment">
+                  <div id ="mainMobile" class="ui basic segment">
                       <div class="ui grid" style="max-width:100%; padding:10px; align-content: center; position: relative;"> 
                           <div class="two column row">
                                   <div class="column"><img class="ui tiny circular image" src="logo1.jpg"  ></div>
@@ -300,6 +335,12 @@ div.active.item  {
                                           </table>
                                         </div>
                                   </div>
+                                  <div style="text-align:center;margin-top:40px;">
+                                    <span class="step"></span>
+                                    <span class="step"></span>
+                                    <span class="step"></span>
+                                    <span class="step"></span>
+                                  </div>
                                   <div style="padding: 5px;">
                                       <button type="button" class="ui brown button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                                       <button type="button" class="ui brown button" id="nextBtn" onclick="nextPrev(1)">Next</button>
@@ -336,7 +377,7 @@ div.active.item  {
                                       // This function will figure out which tab to display
                                       var x = document.getElementsByClassName("tab");
                                       // Exit the function if any field in the current tab is invalid:
-                                      //if (n == 1 && !validateForm()) return false;
+                                      if (n == 1 && !validateForm()) return false;
                                       // Hide the current tab:
                                       x[currentTab].style.display = "none";
                                       // Increase or decrease the current tab by 1:
@@ -351,7 +392,27 @@ div.active.item  {
                                       showTab(currentTab);
                                     }
                                     
-                                    
+                                    function validateForm() {
+                                      // This function deals with validation of the form fields
+                                      var x, y, i, valid = true;
+                                      x = document.getElementsByClassName("tab");
+                                      y = x[currentTab].getElementsByTagName("input");
+                                      // A loop that checks every input field in the current tab:
+                                      for (i = 0; i < y.length; i++) {
+                                        // If a field is empty...
+                                        if (y[i].value == "") {
+                                          // add an "invalid" class to the field:
+                                          y[i].className += " invalid";
+                                          // and set the current valid status to false
+                                          valid = false;
+                                        }
+                                      }
+                                      // If the valid status is true, mark the step as finished and valid:
+                                      if (valid) {
+                                        document.getElementsByClassName("step")[currentTab].className += " finish";
+                                      }
+                                      return valid; // return the valid status
+                                    }
                                     
                                     function fixStepIndicator(n) {
                                       // This function removes the "active" class of all steps...
@@ -362,6 +423,20 @@ div.active.item  {
                                       //... and adds the "active" class on the current step:
                                       x[n].className += " active";
                                     }
+
+                                    function myMobileResponsiveness(x) {
+                                        if (x.matches) { // If media query matches
+                                          document.getElementById("main").childNodes[3].className = "not-pushed";
+                                          document.getElementById("mainMobile").childNodes[1].className="ui inverted brown secondary menu";
+                                        } else {
+                                          document.getElementById("main").childNodes[3].className = "pusher";
+                                          document.getElementById("mainMobile").childNodes[1].className="ui grid";
+                                        }
+                                      }
+
+                                      var x = window.matchMedia("(max-width: 768px)")
+                                      myMobileResponsiveness(x) // Call listener function at run time
+                                      x.addListener(myMobileResponsiveness) // Attach listener function on state changes
                                     </script>
 
                               </p>
