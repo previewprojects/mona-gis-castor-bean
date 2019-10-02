@@ -31,12 +31,19 @@ input.invalid {
 div.active.item  {
   border-left: 5px solid rgb(255, 203, 203);
 }
-
+@media screen and (max-width: 768px) {
+  .sidebar{
+    display: none !important;
+  }
+  .not-pushed{
+    max-width: 100% !important;
+  }
+}
 </style>
 </head>
 
 <body>
-  <div class="ui bottom attached segment pushable" >
+  <div id= "main" class="ui bottom attached segment pushable" >
                 <div class="ui visible inverted left vertical sidebar menu" style="min-height: 100% !important; background-color: brown !important;">
                       <a class="item">
                         <h4 style="letter-spacing: 2px;">Jamaica Castor Growers</h4>
@@ -95,14 +102,14 @@ div.active.item  {
                       <div class="ui clearing divider"></div>
                 </div>
                 <div class="pusher" style=" max-width: 81%;">
-                  <div class="ui basic segment">
-                      <!-- <div class="ui grid" style="max-width:100%; padding:10px; align-content: center; position: relative;"> 
+                  <div id ="mainMobile" class="ui basic segment">
+                      <div class="ui grid" style="max-width:100%; padding:10px; align-content: center; position: relative;"> 
                           <div class="two column row">
                                   <div class="column"><img class="ui tiny circular image" src="logo1.jpg"  ></div>
-                                  <div class="column" style="margin-right: 0px;"><img class="ui tiny circular image" src="JBU_LOGO_FINAL.jpeg" style="position: absolute; right:0px;" ></div>
+                                  <!-- <div class="column" style="margin-right: 0px;"><img class="ui tiny circular image" src="JBU_LOGO_FINAL.jpeg" style="position: absolute; right:0px;" ></div> -->
                           </div>
                       </div> 
-                      <div class="ui clearing divider"></div> -->
+                      <div class="ui clearing divider"></div>
                     <div class="ui secondary pointing menu">
                       <a class="active item">
                         List of Records
@@ -150,6 +157,22 @@ div.active.item  {
                 </div>
               </div>
 </body>
+<script>
+function myMobileResponsiveness(x) {
+          if (x.matches) { // If media query matches
+            document.getElementById("main").childNodes[3].className = "not-pushed";
+            document.getElementById("mainMobile").childNodes[1].className="ui inverted brown secondary menu";
+          } else {
+            document.getElementById("main").childNodes[3].className = "pusher";
+            document.getElementById("mainMobile").childNodes[1].className="ui grid";
+          }
+        }
+        
+          var x = window.matchMedia("(max-width: 768px)")
+          myMobileResponsiveness(x) // Call listener function at run time
+          x.addListener(myMobileResponsiveness) // Attach listener function on state changes
+                                    
+</script>
 
 
 </html>
